@@ -1,0 +1,137 @@
+* {
+  background-color: #0D1117;
+  color: #C9D1D9;
+}
+
+.navbar {
+  position: fixed;
+  border: 1px solid red;
+  background-color: #161B22;
+  height: 70px;
+}
+
+.github {
+  margin: 0px 10px;
+  width: 45px;
+  height: 45px;
+}
+
+input[type=text] {
+  margin: 0px 5px;
+  width: 245px;
+  height: 40px;
+  outline: none;
+  border: 1px solid #a5a7aa;
+  border-radius: 3px;
+}
+
+input[type=text]::-moz-placeholder {
+  padding: 5px;
+  color: #C2C3C5;
+}
+
+input[type=text]:-ms-input-placeholder {
+  padding: 5px;
+  color: #C2C3C5;
+}
+
+input[type=text]::placeholder {
+  padding: 5px;
+  color: #C2C3C5;
+}
+
+.left-content {
+  background-color: #161B22 !important;
+  display: flex;
+  background-color: #161B22;
+}
+
+.left-content ul {
+  display: flex;
+  text-align: center;
+  list-style: none;
+}
+
+.left-content ul li {
+  margin: 5px;
+  padding: 0px 10px;
+  cursor: pointer;
+}
+
+.left-content ul li:hover {
+  color: #b3b5b8;
+}
+
+.right-content {
+  background-color: wheat;
+}
+
+.right-content ul li {
+  color: white;
+}
+
+#profile {
+  display: flex;
+  margin-top: 10px;
+  margin-right: 10px;
+  border: 3px solid blue;
+  height: 90vh;
+  text-align: center;
+}
+
+.profile-contents {
+  margin-top: 50px;
+}
+
+.profile-contents p {
+  padding: 10px;
+}
+
+.profile-picture {
+  border: 1px solid white;
+  margin: auto;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+}
+
+#profile button {
+  width: 350px;
+  text-align: center;
+  height: 40px;
+  background-color: #21262D;
+  border-color: rgba(240, 246, 252, 0.1);
+}
+
+.followers-following {
+  display: flex;
+  text-align: center;
+  padding: 10px;
+}
+
+.profile-navbar {
+  width: 100vw;
+  height: 40px;
+  margin-top: 50px;
+  border: 1px solid pink;
+}
+
+#profile-bar {
+  width: 100%;
+}
+
+.profile-navbar ul {
+  display: flex;
+  text-align: center;
+  list-style: none;
+}
+
+.profile-navbar ul li {
+  margin: 5px;
+  padding: 0px 10px;
+  cursor: pointer;
+}
+
+.profile-navbar ul li:hover {
+  color: #b3b5b8;
+}/*# sourceMappingURL=style.css.map */
