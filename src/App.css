@@ -147,6 +147,36 @@ input[type=text]::placeholder{
   color: #b3b5b8;
 }
 
-
-
+/* For overview page */
+#overview{
+  width: 900px;
+  border: 2px solid green;
+}
+.overview-titles{
+  display:flex;
+  justify-content: space-between;
+  margin: 05px 20px;
+}
+#overview-box{
+  margin: 10px;
+  height: 100px;
+  border: 1px solid grey;
+  border-radius: 10px;
+}
+/* For repository */
+#repository{
+  border: 1px solid aqua;
+}
+#repository-box{
+  margin: 10px;
+  height: 100px;
+  border-bottom: 1px solid grey;
+}
+#new-repository{
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #238636;
+  border:1px rgba(46,164,79,0.4);
+}
 

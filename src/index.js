@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import Profile from './components/Profile'
+import Profile from './components/Profile';
+import Overview from './components/overview';
+import Repository from './components/repository'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import reportWebVitals from './reportWebVitals';
 
@@ -12,6 +14,8 @@ root.render(
     <App />
     <>
       <Profile/>
+      <Overview/>
+      <Repository/>
     </>
   </React.StrictMode>
 );
