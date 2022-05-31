@@ -30,7 +30,8 @@
 #overview-heading a{
   text-decoration: none;
   border-bottom: 01px solid transparent;
+  color:#58A6FF;
 }
 #overview-heading a:hover{
-  border-bottom-color:blue
+  border-bottom-color: #58A6FF;
 }

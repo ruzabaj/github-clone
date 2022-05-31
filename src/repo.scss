@@ -1,5 +1,6 @@
 $button-color:#30363D; 
 $text-color: #c9d1d986;
+$link-color:#58A6FF;
 
 #repository{
     border: 1px solid aqua;
@@ -64,7 +65,8 @@ options:hover{
 #repository-project a{
     text-decoration: none;
     border-bottom: 01px solid transparent;
+    color:$link-color;
 }
 #repository-project a:hover{
- border-bottom-color:blue
+ border-bottom-color:$link-color;
 }
