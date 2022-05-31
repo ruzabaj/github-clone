@@ -1,0 +1,33 @@
+.logo{
+    margin: 0px 15px 0px 40px;
+  }
+  .github{
+    width: 25px;
+    height: 25px;
+  }
+.footer{
+    border: 1px solid blue;
+}
+.footer-links{
+    display: flex;
+}
+.footer-links p{
+    color: #C9D1D9;
+    margin: 10px;
+    padding: 10px 10px
+}
+.footer-links ul{
+    list-style: none;
+    display: flex;
+}
+.footer-links ul li{
+    margin: 10px;
+    padding: 10px 10px;
+}
+.footer-links ul a{
+    text-decoration: none;
+    border-bottom: 01px solid transparent;
+}
+.footer-links ul a:hover{
+    border-bottom-color:blue
+}

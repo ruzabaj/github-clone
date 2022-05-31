@@ -1,0 +1,68 @@
+.navbar{
+    position: fixed;
+    /* border: 1px solid red; */
+    height: 70px;
+    width: 100%;
+    background-color: #161B22;
+  }
+  
+  .left-content,
+  .right-content{
+    display: flex;
+    align-items: center;
+    background-color: #161B22;
+    /* border: 1px solid green; */
+    
+  }
+  .left-content ul,
+  .right-content ul{ 
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    background-color: #161B22;
+    list-style: none;
+     /* border:1px solid teal; */
+  }
+  .links ul li,
+  .right-content ul li{
+    background-color: #161B22; 
+    color: white;   
+    font-size: 14px;
+    font-weight: 400;
+    padding: 0px 10px;
+    cursor: pointer;
+  } 
+  .links{
+    background-color: #161B22;
+  }
+  .logo{
+    margin: 0px 15px 0px 40px;
+  }
+  .github{
+    width: 35px;
+    height: 35px;
+  }
+  input[type=text]{
+    margin: 0px 05px;
+    width: 275px;
+    height: 30px;
+    outline: none;
+    border: 1px solid #a5a7aa;
+    border-radius: 03px;
+  }
+  input[type=text]::placeholder{
+    padding: 05px;
+    color: #C2C3C5;
+  }
+  
+
+  .left-content ul li:hover{
+    color: #b3b5b8;
+  }
+  
+  .navbar-icon{
+    border-radius: 20px;
+    height: 30px;
+    width: 30px;
+  }
+  
