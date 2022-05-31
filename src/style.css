@@ -1,0 +1,36 @@
+#profile-navbar {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #F78166 ;
+}
+#profile-navbar ul{ 
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+#profile-navbar ul li{
+  padding: 0px 15px;
+  cursor: pointer;
+  border-bottom: 05px solid transparent;
+}
+
+#profile-navbar ul li a{
+  text-decoration: none;
+  color: #C9D1D9;
+}
+#profile-navbar ul li:visited{
+  border-bottom-color: #F78166 !important;
+}
+ 
+#profile-navbar ul li:hover{
+  border-bottom-color: #F78166;
+    color: #b3b5b8;
+}
+#overview-heading a{
+  text-decoration: none;
+  border-bottom: 01px solid transparent;
+}
+#overview-heading a:hover{
+  border-bottom-color:blue
+}

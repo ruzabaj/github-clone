@@ -2,7 +2,7 @@ import React from "react";
 import './App.css';
 // import './style.scss'
 import Profile from "./components/profile-info";
-import Functionalities from "./components/functionalities";
+import Links from "./components/link";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         <Profile/>
       </div>
       <div className="functionalities">
-        <Functionalities/>
+        <Links/>
       </div>
     </div>
       

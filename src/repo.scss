@@ -1,0 +1,70 @@
+$button-color:#30363D; 
+$text-color: #c9d1d986;
+
+#repository{
+    border: 1px solid aqua;
+}
+.repository-title input[type=text]{
+    margin: 0px 05px;
+    width: 575px;
+    height: 30px;
+    outline: none;
+    border: 1px solid #a5a7aa;
+    border-radius: 05px;
+}
+.repository-title input[type=text]::placeholder{
+    padding: 05px;
+    color: #C2C3C5;
+  }
+#repository-box{
+    margin: 10px;
+    height: auto;
+    border-bottom: 1px solid grey;
+}
+#respository-heading{
+    display: flex;
+    justify-content: space-between;
+}
+
+#repository-project span{
+    border: 1px solid grey;
+    width: 60px;
+    height: 20px;
+    border-radius: 05px;
+    margin: 0px 05px;
+}
+#select-box{
+    background-color: $button-color;
+    width: 100px;
+    height: 30px;
+    margin:5px 10px;
+    border-radius: 05px;
+    color: white;
+    text-align: center;
+}
+options:hover{
+    background-color: grey;
+}
+#new-repository{
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #238636;
+    border:1px rgba(46,164,79,0.4);
+}
+.star{
+    width: 70px;
+    height: 30px;
+    border: 1px solid grey;
+    border-radius: 05px;
+}
+.description{
+    color: $text-color;
+}
+#repository-project a{
+    text-decoration: none;
+    border-bottom: 01px solid transparent;
+}
+#repository-project a:hover{
+ border-bottom-color:blue
+}
