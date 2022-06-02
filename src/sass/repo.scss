@@ -1,13 +1,8 @@
-$button-color:#30363D; 
-$text-color: #c9d1d986;
-$link-color:#58A6FF;
+@import './config';
 
-#repository{
-    border: 1px solid aqua;
-}
 .repository-title input[type=text]{
     margin: 0px 05px;
-    width: 575px;
+    width: 375px;
     height: 30px;
     outline: none;
     border: 1px solid #a5a7aa;
@@ -43,14 +38,14 @@ $link-color:#58A6FF;
     color: white;
     text-align: center;
 }
-options:hover{
-    background-color: grey;
-}
+
+// button
 #new-repository{
-    width: 200px;
+    width: 75px;
     height: 40px;
     border-radius: 10px;
     background-color: #238636;
+    color:$primary-color;
     border:1px rgba(46,164,79,0.4);
 }
 .star{

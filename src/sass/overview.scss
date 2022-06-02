@@ -1,0 +1,27 @@
+
+@import './config';
+
+  #overview-heading{
+    display: flex;
+    justify-content: space-between;
+  }
+  .overview-titles p{
+    font-size: 12px;
+  }
+  .overview-titles{
+    display:flex;
+    justify-content: space-between;
+  }
+  #overview-box{    
+    height: 150px;
+    border: 1px solid $border-color;
+    border-radius: 10px;
+  }
+  #overview-heading a{
+    text-decoration: none;
+    border-bottom: 01px solid transparent;
+    color:#58A6FF;
+  }
+  #overview-heading a:hover{
+    border-bottom-color: #58A6FF;
+  }

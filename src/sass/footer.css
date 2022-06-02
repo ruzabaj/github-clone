@@ -1,0 +1,36 @@
+.footer .github {
+  width: 25px;
+  height: 25px;
+}
+
+.footer-links {
+  display: flex;
+}
+
+.footer-links p {
+  color: #C9D1D9;
+  margin: 10px;
+  padding: 10px 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+  display: flex;
+}
+
+.footer-links ul li {
+  margin: 10px;
+  font-size: 12px;
+  padding: 10px 10px;
+}
+
+.footer-links ul a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  color: #58A6FF;
+}
+
+.footer-links ul a:hover {
+  color: #58A6FF;
+  border-bottom-color: #58A6FF;
+}/*# sourceMappingURL=footer.css.map */

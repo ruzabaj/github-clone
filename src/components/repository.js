@@ -1,7 +1,17 @@
-import '../repo.scss';
-export default function repository(){
+import '../sass/repo.scss';
+export default function Repository(){
+    const data =[
+        {
+            name: "project-name1",
+            status: "status_1",
+            description: "description_1",
+            language: "language_1",
+            time:"updated two hours ago"
+          },
+    ];
     return(
         <div className="container-md" id="repository">
+            {/* react select package  */}
             <div className="repository-title">
                 <input type="text"  placeholder="FInd a repository"/>
                     <select id="select-box">
@@ -33,36 +43,22 @@ export default function repository(){
                 <button type="submit" id="new-repository">New</button>
             </div>
             <div class="row">
-                <div class="col" id="repository-box">
+                {data.map((item)=>(
+                    <div class="col-lg-" id="repository-box">
                     <div id='respository-heading'>
                         <div id='repository-project'>
-                            <a href="project-name">Project Name</a>
-                            <span> Status</span>
+                            <a href="project-name">{item.name}</a>
+                            <span> {item.status}</span>
                         </div>
                         <div class="star">Star<select><option></option></select></div>
                     </div>
                         <div>
-                            <p class="description">Project Description</p>
-                            <p>Languages Used</p>
-                            <p>Updated 5 hours ago</p>
+                            <p class="description">{item.description}</p>
+                            <p>{item.status}</p>
+                            <p>{item.time}</p>
                         </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col" id="repository-box">
-                    <div id='respository-heading'>
-                        <div id='repository-project'>
-                            <a href="project-name">Project Name</a>
-                            <span> Status</span>
-                        </div>
-                        <div class="star">Star<select><option></option></select></div>
-                    </div>
-                        <div>
-                            <p class="description">Project Description</p>
-                            <p>Languages Used</p>
-                            <p>Updated 5 hours ago</p>
-                        </div>
-                </div>
+                ))}
             </div>
         </div>
     );

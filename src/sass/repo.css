@@ -1,0 +1,82 @@
+.repository-title input[type=text] {
+  margin: 0px 5px;
+  width: 375px;
+  height: 30px;
+  outline: none;
+  border: 1px solid #a5a7aa;
+  border-radius: 5px;
+}
+
+.repository-title input[type=text]::-moz-placeholder {
+  padding: 5px;
+  color: #C2C3C5;
+}
+
+.repository-title input[type=text]:-ms-input-placeholder {
+  padding: 5px;
+  color: #C2C3C5;
+}
+
+.repository-title input[type=text]::placeholder {
+  padding: 5px;
+  color: #C2C3C5;
+}
+
+#repository-box {
+  margin: 10px;
+  height: auto;
+  border-bottom: 1px solid grey;
+}
+
+#respository-heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+#repository-project span {
+  border: 1px solid grey;
+  width: 60px;
+  height: 20px;
+  border-radius: 5px;
+  margin: 0px 5px;
+}
+
+#select-box {
+  background-color: #30363D;
+  width: 100px;
+  height: 30px;
+  margin: 5px 10px;
+  border-radius: 5px;
+  color: white;
+  text-align: center;
+}
+
+#new-repository {
+  width: 75px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #238636;
+  color: white;
+  border: 1px rgba(46, 164, 79, 0.4);
+}
+
+.star {
+  width: 70px;
+  height: 30px;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.description {
+  color: rgba(201, 209, 217, 0.5254901961);
+}
+
+#repository-project a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  color: #58A6FF;
+}
+
+#repository-project a:hover {
+  border-bottom-color: #58A6FF;
+}/*# sourceMappingURL=repo.css.map */

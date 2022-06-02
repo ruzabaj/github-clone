@@ -1,0 +1,25 @@
+#second-navbar {
+  margin-top: 30px;
+}
+
+#second-navbar ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+#second-navbar ul li {
+  padding: 0px 10px;
+  cursor: pointer;
+  border-bottom: 5px solid transparent;
+}
+
+#second-navbar ul li a {
+  text-decoration: none;
+  color: #C9D1D9;
+}
+
+#second-navbar ul li:active {
+  border-bottom-color: #F78166;
+  color: #b3b5b8;
+}/*# sourceMappingURL=styles.css.map */

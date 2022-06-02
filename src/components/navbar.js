@@ -1,6 +1,6 @@
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-import '../navbar.css'
+import '../sass/navbar.scss'
 
 export default function  Navbar  () {
     return(

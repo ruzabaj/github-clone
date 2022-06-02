@@ -1,0 +1,36 @@
+@import "./config";
+.footer{
+    border: 1px solid green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px;
+}
+.footer .github {
+  width: 25px;
+  height: 25px;
+}
+.footer-links {
+    display: flex;
+}
+.footer-links p {
+  color: #c9d1d9;
+  margin: 10px;
+}
+.footer-links ul {
+  list-style: none;
+  display: flex;
+}
+.footer-links ul li {
+  margin: 10px;
+  font-size: 12px;
+}
+.footer-links ul a {
+  text-decoration: none;
+  border-bottom: 01px solid transparent;
+  color: $link-color;
+}
+.footer-links ul a:hover {
+  color: $link-color;
+  border-bottom-color: $link-color;
+}

@@ -1,6 +1,6 @@
+@import './config';
 .navbar{
     position: fixed;
-    /* border: 1px solid red; */
     height: 70px;
     width: 100%;
     background-color: #161B22;
@@ -39,8 +39,8 @@
     margin: 0px 15px 0px 40px;
   }
   .github{
-    width: 35px;
-    height: 35px;
+    width: 32px;
+    height: 33px;
   }
   input[type=text]{
     margin: 0px 05px;
