@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import Navbar from "./components/navbar";
-// import Footer from "./components/footer";
+import Footer from "./components/footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
@@ -14,7 +14,7 @@ root.render(
     <Router>
       <Navbar />
       <App />
-      {/* <Footer /> */}
+      <Footer />
     </Router>
   </React.StrictMode>
 );

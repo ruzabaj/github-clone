@@ -18,7 +18,7 @@ const EditProfile = (props) => {
             <label to="">Name</label>
             <input type="text" placeholder="name"></input>
             <div>
-            <label to="">Bio</label>
+              <label to="">Bio</label>
             </div>
             <textarea placeholder="bio"></textarea>
             <p>
@@ -28,12 +28,14 @@ const EditProfile = (props) => {
             <input type="text" placeholder="Location"></input>
             <input type="text" placeholder="Website"></input>
             <input type="text" placeholder="Twitter Username"></input>
-            <button type="submit" id="save">
-              Save
-            </button>
-            <button type="submit" id="cancel">
-              Cancel
-            </button>
+            <div id="btn">
+              <button type="submit" id="save">
+                Save
+              </button>
+              <button type="submit" id="cancel">
+                Cancel
+              </button>
+            </div>
           </form>
         </div>
       )}
