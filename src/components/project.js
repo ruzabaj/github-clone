@@ -1,6 +1,15 @@
 import React from "react";
+// import { useHistory } from "react-router-dom";
 import "../sass/project.scss";
+import "../routes"
+
 const project = () => {
+  // let history = useHistory();
+  function newProject() {
+    // history.push("/new");
+    console.log("hi")
+    // how to push routes to another page
+  }
   return (
     <div>
       <div class="project-headbar">
@@ -13,7 +22,7 @@ const project = () => {
         <div class="open-close"> </div>
         <div class="project-log"> 
           <p>You don't have any projects yet</p>
-          <button type="submit" id="new-project">  New Project</button>
+          <button type="submit" id="new-project" onClick={newProject}>  New Project</button>
           <a href="learn">Learn More</a>
         </div>
       </div>

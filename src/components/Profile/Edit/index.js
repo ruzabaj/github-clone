@@ -1,18 +1,8 @@
 import React from "react";
-import { useState } from "react";
 
-const EditProfile = (props) => {
-  const [isOpen, setIsOpen] = useState(false);
+const EditProfile = () => {
   return (
     <div>
-      <button
-        type="submit"
-        id="edit-profile"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        {props.label}
-      </button>
-      {isOpen && (
         <div className="edit-profile" id="edit-profile">
           <form>
             <label to="">Name</label>
@@ -24,21 +14,21 @@ const EditProfile = (props) => {
             <p>
               You can @mention other users and organizations to link to them.
             </p>
-            <input type="text" placeholder="Company"></input>
-            <input type="text" placeholder="Location"></input>
-            <input type="text" placeholder="Website"></input>
-            <input type="text" placeholder="Twitter Username"></input>
+            <input type="text" placeholder="Company"/>
+            <input type="text" placeholder="Location"/>
+            <input type="text" placeholder="Website"/>
+            <input type="text" placeholder="Twitter Username"/>
             <div id="btn">
-              <button type="submit" id="save">
+              <button type="submit" id="save" >
                 Save
               </button>
               <button type="submit" id="cancel">
                 Cancel
               </button>
+              <div id="test">HI</div>
             </div>
           </form>
         </div>
-      )}
     </div>
   );
 };

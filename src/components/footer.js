@@ -1,6 +1,8 @@
 import "../sass/footer.scss";
 export default function footer() {
   return (
+<div>
+    <center><hr/></center>
     <div className="footer">
       <div className="footer-links">
         <div>
@@ -53,5 +55,6 @@ export default function footer() {
         </div>
       </div>
     </div>
+</div>
   );
 }

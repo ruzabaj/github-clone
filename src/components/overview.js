@@ -35,7 +35,7 @@ export default function Overview() {
 
       <div class="row">
         {data.map((item) => (
-          <div class="col-6" id="overview-box">
+          <div class="col-5" id="overview-box">
             <div id="overview-heading">
               <a href="project-name">{item.name}</a>
               <p>{item.status}</p>

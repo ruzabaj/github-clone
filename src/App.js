@@ -1,5 +1,5 @@
 import React from "react";
-import Profile from "./components/Profile-info";
+import Profile from "./components/Profile";
 import Tabs from "./components/Tabs";
 import './App.css';
 

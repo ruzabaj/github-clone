@@ -3,6 +3,7 @@ import Overview from "./components/overview";
 import Repository from "./components/Repository";
 import Project from "./components/project";
 import Stars from "./components/Stars";
+import NewProject from "./components/NewProject";
 import "./sass/styles.scss";
 
 export default function routes() {
@@ -14,6 +15,7 @@ export default function routes() {
             <Route path="/repository" element={<Repository/>} />
             <Route path="/project" element={<Project/>} />
             <Route path="/stars" element={<Stars/>} />
+            <Route path="/new" element={<NewProject/>} />
           </Routes>
       </div>
       {/* <Overview /> */}
