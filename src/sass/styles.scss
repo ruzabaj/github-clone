@@ -24,11 +24,8 @@ hr{
   color: #C9D1D9;
 }
 
-// #second-navbar ul li:hover{
-//     border-bottom-color: #F78166;
-//     color: #b3b5b8;
-// }
-#second-navbar ul li:active{
+#second-navbar ul li:focus-within{
     border-bottom-color: #F78166;
     color: #b3b5b8;
 }
+
