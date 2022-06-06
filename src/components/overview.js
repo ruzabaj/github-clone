@@ -3,27 +3,33 @@ export default function Overview() {
   const data = [
     {
       name: "project-name1",
-      status: "status_1",
+      status: "public",
       description: "description_1",
       language: "language_1",
     },
     {
       name: "project-name2",
-      status: "status_1",
+      status: "private",
       description: "description_1",
       language: "language_1",
     },
     {
         name: "project-name2",
-        status: "status_1",
+        status: "private",
         description: "description_1",
         language: "language_1",
     },
     {
         name: "project-name4",
-        status: "status_2",
+        status: "public",
         description: "description_4",
         language: "language_3.3",
+    },
+    {
+        name: "project-name5",
+        status: "private",
+        description: "description_5",
+        language: "language_3.5",
     },
   ];
   return (
@@ -33,7 +39,7 @@ export default function Overview() {
         <p>Customise your pins</p>
       </div>
 
-      <div class="row">
+      <div class="row" id='overview'>
         {data.map((item) => (
           <div class="col-5" id="overview-box">
             <div id="overview-heading">

@@ -1,6 +1,6 @@
 
 @import './config';
-
+ 
   #overview-heading{
     display: flex;
     justify-content: space-between;
@@ -12,7 +12,8 @@
     display:flex;
     justify-content: space-between;
   }
-  #overview-box{    
+  #overview-box{   
+    padding: 15px 10px;
     margin: 10px;
     height: 150px;
     border: 1px solid $border-color;
