@@ -28,14 +28,14 @@ export default function Repository() {
       <div className="repository-title">
         <input type="text" placeholder="FInd a repository" />
 
-        {data.map((items) => (
+        {dropDown.map((items) => (
           <diV>
             <select id="select-box" >
               <option>Type</option>
               <option key={items.id} value={items.status}>
                 {items.id}
               </option> 
-              {console.log(data[0].status)}
+              {/* {console.log(dropDown)} */}
             </select>
             <select id="select-box">
               <option>Language</option>
@@ -54,15 +54,15 @@ export default function Repository() {
         </button>
       </div>
 
-      <div class="row">
+      <div className=""="row">
         {data.map((item) => (
-          <div class="col-lg-" id="repository-box">
+          <div className="col-lg-" id="repository-box">
             <div id="respository-heading">
               <div id="repository-project">
                 <a href="project-name">{item.name}</a>
                 <span> {item.status}</span>
               </div>
-              <div class="star">
+              <div className="star">
                 Star
                 <select>
                   <option></option>
@@ -70,7 +70,7 @@ export default function Repository() {
               </div>
             </div>
             <div>
-              <p class="description">{item.description}</p>
+              <p className="description">{item.description}</p>
               <p>{item.status}</p>
               <p>updated {item.time} hours ago</p>
             </div>
