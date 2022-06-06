@@ -54,7 +54,7 @@ export default function Repository() {
         </button>
       </div>
 
-      <div className=""="row">
+      <div className="row">
         {data.map((item) => (
           <div className="col-lg-" id="repository-box">
             <div id="respository-heading">
