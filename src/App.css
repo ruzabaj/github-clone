@@ -22,7 +22,6 @@
 }
 .profile-contents{
   height: auto;
-  /* border: 1px solid turquoise; */
 }
 .profile-contents p{
   padding: 10px;
@@ -36,7 +35,8 @@
 }
 #edit-profile {
   width: 320px;
-  height: 40px;
+  /* height: 40px; */
+  height: auto;
   background-color: #21262D;
   border-color: rgba(240,246,252,0.1);
   border-radius: 10px;
