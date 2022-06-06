@@ -12,7 +12,7 @@ const btnClick =() =>{
         <p>{username}</p>
         <p>{bio}</p>
         <button
-        type="submit" onClick={btnClick}      >Edit Me
+        type="submit" onClick={btnClick}   id="edit-profile"   >Edit Me
       </button>
         <div className="followers-following">
           <a href='followers'>{followers} followers .</a>

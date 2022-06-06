@@ -1,48 +1,57 @@
 import '../sass/repo.scss';
+import Select from 'react-select';
+
 export default function Repository(){
     const data =[
         {
             name: "project-name1",
-            status: "status_1",
+            status: "public",
             description: "description_1",
             language: "language_1",
-            time:"updated two hours ago"
+            time:"two"
+          },
+        {
+            name: "project-name1",
+            status: "private",
+            description: "description_1",
+            language: "language_2",
+            time:" one "
           },
     ];
+    const dropDown =(e) => {
+        
+    }
     return(
+        
         <div className="container-md" id="repository">
-            {/* react select package  */}
             <div className="repository-title">
                 <input type="text"  placeholder="FInd a repository"/>
-                    <select id="select-box">
-                        <option value="0">Type</option>
-                        <option value="1">All</option>
-                        <option value="2">Public</option>
-                        <option value="3">Private</option>
-                        <option value="4">Sources</option>
-                        <option value="5">Forks</option>
-                        <option value="8">Archieved</option>
-                        <option value="9">Mirror</option>
-                        <option value="9">Templates</option>
+            
+
+                {/* {data.forEach((item) => ( */}
+                    <select id="select-box" onChange={dropDown}>
+                        <option>Type</option>
+                        {/* <option>{item.status}</option> */}
                     </select>
                     <select id="select-box">
                         <option>Language</option>
-                        <option>HTML</option>
-                        <option>CSS</option>
-                        <option>javascript</option>
-                        <option>Python</option>
-                        <option>language</option>
-                        <option>language</option>
+                        {/* <option>{item.language}</option> */}
                     </select>
                     <select id="select-box">
                         <option>Sort</option>
                         <option>Last Updated</option>
-                        <option>Name</option>
+                        {/* <option>{item.name}</option> */}
                         <option>Stars</option>
                     </select>
                 <button type="submit" id="new-repository">New</button>
             </div>
+
             <div class="row">
+            {/* { data.filter((items) => (
+                <div>
+                    items[0].status=="public";
+                </div>
+            ))}*/}
                 {data.map((item)=>(
                     <div class="col-lg-" id="repository-box">
                     <div id='respository-heading'>
@@ -55,7 +64,7 @@ export default function Repository(){
                         <div>
                             <p class="description">{item.description}</p>
                             <p>{item.status}</p>
-                            <p>{item.time}</p>
+                            <p>updated {item.time} hours ago</p>
                         </div>
                 </div>
                 ))}

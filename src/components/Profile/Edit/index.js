@@ -25,7 +25,6 @@ const EditProfile = () => {
               <button type="submit" id="cancel">
                 Cancel
               </button>
-              <div id="test">HI</div>
             </div>
           </form>
         </div>
