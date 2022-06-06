@@ -5,7 +5,7 @@ import { useState } from "react";
 export default function Profile() {
   
   const data = {
-    imgUrl: "code-girl.jpg",
+    imgUrl: "github-profile.png",
     username: "username",
     name: "name",
     bio:'bio',
