@@ -19,23 +19,44 @@ export default function Repository() {
       language: "language_2",
       time: " one ",
     },
+    {
+      name: "project-name1",
+      status: "private",
+      description: "description_1",
+      language: "language_2",
+      time: " one ",
+    },
+    {
+      name: "project-name1",
+      status: "private",
+      description: "description_1",
+      language: "language_2",
+      time: " one ",
+    },
+    
   ];
   const [dropDown ,setdropDowm] =useState(data);
-
-
+      
+  const filter=()=>{
+      setdropDowm("data")
+  }
+    // useEffect(() => {
+        //     return () => {
+                
+        //     };
+        // }, [])
   return (
     <div className="container-md" id="repository">
       <div className="repository-title">
         <input type="text" placeholder="FInd a repository" />
-
-        {dropDown.map((items) => (
+        {dropDown.map((items) => ( 
           <diV>
-            <select id="select-box" >
+            <select id="select-box" onChange={filter}>
               <option>Type</option>
               <option key={items.id} value={items.status}>
                 {items.id}
               </option> 
-              {/* {console.log(dropDown)} */}
+              {console.log(dropDown.status)}
             </select>
             <select id="select-box">
               <option>Language</option>
@@ -48,7 +69,7 @@ export default function Repository() {
               <option>Stars</option>
             </select>
           </diV>
-        ))}
+                ))}
         <button type="submit" id="new-repository">
           New
         </button>

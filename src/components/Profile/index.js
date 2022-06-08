@@ -18,10 +18,6 @@ export default function Profile() {
   
   const [userInfo , setuserInfo] =useState(data);
   const [showView , setshowView] =useState(true);
-  // const toggleShowview = () =>{
-  //   setshowView(!showView)
-  // }
-  
   return (
     <div id="profile">
       <div className="profile-contents" id='profile-contents'> 
@@ -31,11 +27,6 @@ export default function Profile() {
          :
          <EditProfile id="button-edit"/>
         }
-
-        {/* <div className="followers-following">
-          <a href='followers'>{data.followers} followers .</a>
-          <a href='followers'>{data.following} following</a>
-        </div> */}
       </div>
     </div>
   );
