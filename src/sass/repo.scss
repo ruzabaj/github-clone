@@ -12,6 +12,15 @@
     padding: 05px;
     color: #C2C3C5;
   }
+  .descriptionn-time-language{
+    display: flex;
+}
+.descriptionn-time-language{
+    p:first-child{
+        color: #C2C3C5;
+        margin-right: 10px;
+    }
+  }
 #repository-box{
     margin: 10px;
     height: auto;

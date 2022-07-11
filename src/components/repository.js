@@ -1,41 +1,36 @@
-import { useState } from "react";
+import axios from "axios";
+import { useState, useRef, useEffect } from "react";
 import "../sass/repo.scss";
-// import Select from 'react-select';
 
 export default function Repository() {
-  const data = [
-    {
-      id: "1",
-      name: "project-name1",
-      status: "public",
-      description: "description_1",
-      language: "language_1",
-      time: "two",
-    },
-    {
-      name: "project-name1",
-      status: "private",
-      description: "description_1",
-      language: "language_2",
-      time: " one ",
-    },
-    {
-      name: "project-name1",
-      status: "private",
-      description: "description_1",
-      language: "language_2",
-      time: " one ",
-    },
-    {
-      name: "project-name1",
-      status: "private",
-      description: "description_1",
-      language: "language_2",
-      time: " one ",
-    },
-  ];
   const [dropDown, setdropDown] = useState("");
+  const [repo, setUserRepo] = useState([]);
 
+  // const [optionData, setoptionData]=useState("");
+  // const [selectedSkill, setSelectedSkill] = useState("")
+  // const [editMode, setEditMode] = useState(false);
+
+  useEffect(() => {
+    axios.get(`https://api.github.com/users/ruzabaj/repos`).then((res) => {
+      setUserRepo(res.data);
+      console.log(res.data);
+    });
+  }, []);
+
+  // const skillSelectionHandler = skill => {
+  //   setoptionData(skill)
+  //   setSelectedSkill("")
+  //   setEditMode(false)
+  // }
+  // const filteredSkills = skills.filter(skill =>
+  //   skill.match(new RegExp(selectedSkill, "i"))
+  // )
+
+  const optionRef = useRef(null);
+
+  const focus = () => {
+    console.log(optionRef.current.value);
+  };
   return (
     <div className="container-md" id="repository">
       <div className="repository-title">
@@ -44,31 +39,38 @@ export default function Repository() {
           id="select-box"
           value={dropDown}
           onChange={(e) => e.target.value}
+          ref={optionRef}
         >
           <option>Type</option>
-          {data.map((index) => (
-            <option value={index.id}> {index.status}</option>
+          {repo.map((index) => (
+            <option value={index.id} onFocus={focus}>
+              {index.status}
+            </option>
           ))}
         </select>
         <select
           id="select-box"
           value={dropDown}
           onChange={(event) => setdropDown(event.target.value)}
+          ref={optionRef}
         >
           <option>Language</option>
-          {data.map((items) => (
-            <option value={items.id}> {items.language}</option>
+          {repo.map((items) => (
+            <option value={items.id} onFocus={focus}>
+              {" "}
+              {items.language}
+            </option>
           ))}
         </select>
         <select
           id="select-box"
           value={dropDown}
           onChange={(event) => event.target.value}
+          ref={optionRef}
         >
           <option>Sort</option>
-          {data.map((i) => (
-            <option value={i.id}>{i.time}</option>
-          ))}
+          <option onFocus={focus}>Ascending</option>
+          <option onFocus={focus}>Descending</option>
         </select>
         <button type="submit" id="new-repository">
           New
@@ -76,12 +78,12 @@ export default function Repository() {
       </div>
 
       <div className="row">
-        {data.map((item) => (
+        {repo.map((item) => (
           <div className="col-lg-" id="repository-box">
             <div id="respository-heading">
               <div id="repository-project">
                 <a href="project-name">{item.name}</a>
-                <span> {item.status}</span>
+                <span> {item.private}</span>
               </div>
               <div className="star">
                 Star
@@ -93,7 +95,10 @@ export default function Repository() {
             <div>
               <p className="description">{item.description}</p>
               <p>{item.status}</p>
-              <p>updated {item.time} hours ago</p>
+              <div className="descriptionn-time-language">
+                <div>{item.language}</div>
+                <div>updated {item.updated_at} hours ago</div>
+              </div>
             </div>
           </div>
         ))}
