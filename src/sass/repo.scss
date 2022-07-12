@@ -16,6 +16,7 @@
     display: flex;
 }
 .descriptionn-time-language{
+    font-size: 12px;
     p{
         color: #C2C3C5 !important;
     }
@@ -37,7 +38,7 @@ input[type=checkbox]{
 }
 #repository-box{
     margin: 10px;
-    height: 120px;
+    height: 125px;
     border-bottom: 1px solid grey;
 }
 #respository-heading{
@@ -61,7 +62,13 @@ input[type=checkbox]{
     color: white;
     text-align: center;
 }
-
+.dot {
+    height: 10px;
+    width: 10px;
+    background-color: yellow;
+    border-radius: 50%;
+    display: inline-block;
+  }
 // button
 #new-repository{
     width: 75px;
