@@ -1,5 +1,7 @@
 @import './config';
-
+.repository-title {
+    display: flex;
+}
 .repository-title input[type=text]{
     margin: 0px 05px;
     width: 375px;
@@ -10,7 +12,7 @@
 }
 .repository-title input[type=text]::placeholder{
     padding: 05px;
-    color: #C2C3C5;
+    color: #C2C3C5 !important;
   }
   .descriptionn-time-language{
     display: flex;

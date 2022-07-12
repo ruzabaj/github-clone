@@ -1,6 +1,6 @@
-import React from 'react'
+import React  from 'react'
 
-const Select = ({filterItem, language, dropDown,  repo}) => {
+const Select = ({ language,  repo}) => {
     
    const arrayFilter= language.filter((id)=>{
         return id!== null
@@ -19,7 +19,7 @@ const Select = ({filterItem, language, dropDown,  repo}) => {
    
     const sortSelect =(event)=>{
         repo.sort((a,b) =>{
-            if(event.target.value == "Name"){
+            if(event.target.value === "Name"){
                 // alert("name")
                 return(
                 a.name > b.name ? a.name : b.name
@@ -30,13 +30,14 @@ const Select = ({filterItem, language, dropDown,  repo}) => {
             }
         })
     }
+
+
     return (
     <div>
-       <div className="repository-title">
-        <input type="text" placeholder="Find a repository" on/>
+
         <select
           id="select-box"
-          value={dropDown}
+        //   value={dropDown}
           onChange={(e) => e.target.value}
         >
           <option>Type</option>
@@ -65,7 +66,7 @@ const Select = ({filterItem, language, dropDown,  repo}) => {
 
         <select
           id="select-box"
-          value={dropDown}
+        //   value={dropDown}
           onChange={sortSelect}
         >
           <option>Sort</option>
@@ -77,7 +78,6 @@ const Select = ({filterItem, language, dropDown,  repo}) => {
           New
         </button>
       </div> 
-    </div>
   )
 }
 

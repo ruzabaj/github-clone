@@ -5,7 +5,8 @@ import Select from "./Select";
 
 export default function Repository() {
   const [repo, setUserRepo] = useState([]);
-  const [dropDown, setdropDown] = useState("");
+  const [search, setSearch]=useState("");
+
   
   useEffect(() => {
     axios.get(`https://api.github.com/users/ruzabaj/repos`)
@@ -19,16 +20,24 @@ export default function Repository() {
     return (element.language)
   }))]
 
- const filterItem=()=>{
-   alert("hi")
- }
-    
+
     return (
     <div className="container-md" id="repository">
-      <Select filterItem={filterItem} language={getLanguage}  dropdown={dropDown} repo={repo}/>  
+      <div className="repository-title">
+        <input type="text" placeholder="Find a repository" onChange={(event=>setSearch(event.target.value))}/>
+      <Select  language={getLanguage}  repo={repo}/>  
+    </div>
 
       <div className="row">
-        {repo.map((item, key) => (
+        {repo.filter((value)=>{
+          if(search == null){
+            return value
+          }
+          else if (value.name.toLowerCase().includes(search.toLowerCase())){
+            return value
+          }
+        })
+        .map((item, key) => (
           <div className="col-lg-" id="repository-box" key={key}>
             <div id="respository-heading">
               <div id="repository-project">
