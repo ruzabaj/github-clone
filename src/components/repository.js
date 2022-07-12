@@ -6,32 +6,37 @@ export default function Repository() {
   const [dropDown, setdropDown] = useState("");
   const [repo, setUserRepo] = useState([]);
 
-  // const [optionData, setoptionData]=useState("");
-  // const [selectedSkill, setSelectedSkill] = useState("")
-  // const [editMode, setEditMode] = useState(false);
-
   useEffect(() => {
-    axios.get(`https://api.github.com/users/ruzabaj/repos`).then((res) => {
+    axios.get(`https://api.github.com/users/ruzabaj/repos`)
+    .then((res) => {
       setUserRepo(res.data);
       console.log(res.data);
-    });
+    })
+    .then((json)=>{
+      const result =json.sort((a,b)=> a.name.localCompare(b.name))
+    })
   }, []);
+
+  const getLanguage= [new Set (repo.map((element)=>{
+    return (element.language)
+  }))]
+  console.log(getLanguage);
 
   const filterItem=(languageFilter)=>{
     const updatedItems= repo.filter((element)=>{
-        {console.log("from updated items function",element)}
+      console.log("from updated items function",element)
       // return
       //   (
         //     element.language===languageFilter
         //     );
       })
-  }
-  const optionRef = useRef(null);
-
-  const focus = () => {
-    console.log(optionRef.current.value);
-  };
-  return (
+    }
+    const optionRef = useRef(null);
+    
+    const focus = () => {
+      console.log(optionRef.current.value);
+    };
+    return (
     <div className="container-md" id="repository">
       <div className="repository-title">
         <input type="text" placeholder="FInd a repository" />
