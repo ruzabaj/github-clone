@@ -3,8 +3,9 @@ import { useState, useRef, useEffect } from "react";
 import "../sass/repo.scss";
 
 export default function Repository() {
-  const [dropDown, setdropDown] = useState("");
   const [repo, setUserRepo] = useState([]);
+  const [dropDown, setdropDown] = useState("");
+  const[language, setLanguage]=useState(getLanguage);
 
   useEffect(() => {
     axios.get(`https://api.github.com/users/ruzabaj/repos`)
@@ -17,7 +18,7 @@ export default function Repository() {
     })
   }, []);
 
-  const getLanguage= [new Set (repo.map((element)=>{
+  const getLanguage= [...new Set (repo.map((element)=>{
     return (element.language)
   }))]
   console.log(getLanguage);
