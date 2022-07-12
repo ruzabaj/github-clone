@@ -16,14 +16,28 @@
     display: flex;
 }
 .descriptionn-time-language{
-    p:first-child{
-        color: #C2C3C5;
-        margin-right: 10px;
+    p{
+        color: #C2C3C5 !important;
+    }
+    div:first-child{
+        margin-right: 20px;
     }
   }
+
+//   star checkbox
+input[type=checkbox]{
+    border: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    opacity: 0;
+}
 #repository-box{
     margin: 10px;
-    height: auto;
+    height: 120px;
     border-bottom: 1px solid grey;
 }
 #respository-heading{
@@ -70,6 +84,8 @@
     text-decoration: none;
     border-bottom: 01px solid transparent;
     color:$link-color;
+    font-size: 20px;
+    font-weight: 500;
 }
 #repository-project a:hover{
  border-bottom-color:$link-color;

@@ -17,15 +17,15 @@ export default function Repository() {
     });
   }, []);
 
-  // const skillSelectionHandler = skill => {
-  //   setoptionData(skill)
-  //   setSelectedSkill("")
-  //   setEditMode(false)
-  // }
-  // const filteredSkills = skills.filter(skill =>
-  //   skill.match(new RegExp(selectedSkill, "i"))
-  // )
-
+  const filterItem=(languageFilter)=>{
+    const updatedItems= repo.filter((element)=>{
+        {console.log("from updated items function",element)}
+      // return
+      //   (
+        //     element.language===languageFilter
+        //     );
+      })
+  }
   const optionRef = useRef(null);
 
   const focus = () => {
@@ -56,8 +56,7 @@ export default function Repository() {
         >
           <option>Language</option>
           {repo.map((items) => (
-            <option value={items.id} onFocus={focus}>
-              {" "}
+            <option value={items.id} onFocus={focus} onClick={()=> filterItem('HTML')}>
               {items.language}
             </option>
           ))}
@@ -86,18 +85,18 @@ export default function Repository() {
                 <span> {item.private}</span>
               </div>
               <div className="star">
-                Star
                 <select>
-                  <option></option>
+                  <option>Star</option>
                 </select>
+                  <input type="checkbox" className="star"/>
               </div>
             </div>
             <div>
               <p className="description">{item.description}</p>
               <p>{item.status}</p>
               <div className="descriptionn-time-language">
-                <div>{item.language}</div>
-                <div>updated {item.updated_at} hours ago</div>
+                <div><p>{item.language}</p></div>
+                <div><p>updated {item.updated_at} hours ago</p></div>
               </div>
             </div>
           </div>
