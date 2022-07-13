@@ -26,7 +26,9 @@ export const updateDetail =async id =>{
     //  {data},
       {
         headers: {
-            "Authorization" : `Bearer ${token}`
+            'content-type': 'application/json',
+            // "Authorization" : `Bearer ${token}`,
+            "Authorization" : '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',
         },
     })
     .then(res => {
