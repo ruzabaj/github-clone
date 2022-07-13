@@ -6,12 +6,13 @@ export default function Overview() {
   
   const [overview, setUserOverview]=  useState([]);
 
+  const getData = async () => {
+    const { data } = await axios.get(`https://api.github.com/users/ruzabaj/repos`);
+    setUserOverview(data);
+  };
   useEffect(() => {
-    axios.get(`https://api.github.com/users/ruzabaj/repos`).then(res=>{
-      setUserOverview(res.data)
-      console.log(res.data)
-    })
-  }, [])
+    getData();
+  }, []);
 
   return (
     <div>
@@ -21,8 +22,8 @@ export default function Overview() {
       </div>
 
       <div class="row" id='overview'>
-        {overview.map((item) => (
-          <div class="col-5" id="overview-box">
+        {overview.map((item, key) => (
+          <div class="col-5" id="overview-box" key={key}>
             <div id="overview-heading">
               <a href="project-name">{item.name}</a>
               <p>{item.status}</p>
