@@ -1,12 +1,12 @@
 import React from 'react'
 
-const Repo = ({item , key}) => {
+const Repo = ({item , key, status}) => {
   return (
     <div className="col-lg-" id="repository-box" key={key}>
             <div id="respository-heading">
               <div id="repository-project">
                 <a href="project-name">{item.name}</a>
-                <span> {item.private}</span>
+                <span> {status}</span>
               </div>
               <div className="star">
                 <select>

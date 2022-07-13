@@ -22,7 +22,6 @@ export default function Profile() {
 
   useEffect(() => {
     axios.get(`https://api.github.com/users/ruzabaj`).then(res=>{
-      console.log(res.data);
       setuserInfo(res.data);
     })    
   }, [])

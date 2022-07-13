@@ -4,7 +4,7 @@ const Type = ({setSelectedType}) => {
     const filterItems = (event) => {
         setSelectedType(event.target.value);
     };
-    
+
   return (
     <div>
     <select id="select-box" onChange={filterItems}>

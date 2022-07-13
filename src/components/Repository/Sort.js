@@ -2,13 +2,13 @@ import React from 'react'
 
 const Sort = ({setSelectedSort}) => {
 
-      const filterItems = (event) => {
+      const filterS = (event) => {
         setSelectedSort(event.target.value);
       };
 
   return (
     <div>
-        <select id="select-box" onChange={filterItems}>
+        <select id="select-box" onChange={filterS}>
         <option>Sort</option>
           <option >Last Updated</option>
           <option >Name</option>
