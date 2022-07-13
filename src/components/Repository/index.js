@@ -74,10 +74,10 @@ export default function Repository() {
 useEffect(()=>{
   const type = repo.filter((element)=>{
     if(element.private === true){
-      setStatus("private");
+      setStatus("Private");
     }
     else{
-      setStatus("public")
+      setStatus("Public")
     }
     console.log(element.fork);
     console.log(status);
