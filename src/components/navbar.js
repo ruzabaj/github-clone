@@ -1,5 +1,3 @@
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 import '../sass/navbar.scss'
 
 export default function  Navbar  () {
@@ -25,7 +23,6 @@ export default function  Navbar  () {
             <div className='links'>
                 <ul>
                     <li><img src='code-girl.jpg' alt='code-girl' className='navbar-icon'/></li>
-                    {/* <li><FontAwesomeIcon icon={faCoffee} /></li> */}
                 </ul>
             </div>
             </div>

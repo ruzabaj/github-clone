@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useState,  useEffect } from "react";
-import "../../sass/repo.scss";
+import "src/sass/repo.scss";
 import Select from "./Select";
 import Sort from "./Sort";
 import Type from "./Type";
+import Repo from "./Repo";
 
 export default function Repository() {
 
@@ -15,8 +16,6 @@ export default function Repository() {
 
   const [filteredRepo, setFilteredRepo] = useState([]);
   // const [searchKeyword, setSearchKeyword] = useState('');
-
-  console.log(selectedSort, "selected-Sort");
 
   useEffect(() => {
     axios.get(`https://api.github.com/users/ruzabaj/repos`)
@@ -33,6 +32,13 @@ export default function Repository() {
     
     setFilteredRepo(newRepo);
   },[selectedLanguage]);
+
+  useEffect(()=>{
+    const newSort= repo.sort((a,b)=>{
+      return a.name> b.name ? a.name: b.name
+    })
+        setFilteredRepo(newSort);
+  },[selectedSort]);
 
   useEffect(()=>{
     const newInput = repo.filter(
@@ -66,40 +72,8 @@ export default function Repository() {
 
       <div className="row">
         {filteredRepo
-        // .filter((value)=>{
-        //   if(search == null){
-        //     return value
-        //   }
-        //   else if (value.name.toLowerCase().includes(search.toLowerCase())){
-        //     return value
-        //   }
-        // })
         .map((item, key) => (
-          <div className="col-lg-" id="repository-box" key={key}>
-            <div id="respository-heading">
-              <div id="repository-project">
-                <a href="project-name">{item.name}</a>
-                <span> {item.private}</span>
-              </div>
-              <div className="star">
-                <select>
-                  <option>Star</option>
-                </select>
-                  <input type="checkbox" className="star"/>
-              </div>
-            </div>
-            <div>
-              <p className="description">{item.description}</p>
-              <p>{item.status}</p>
-              <div className="descriptionn-time-language">
-                <div>
-                  <p>{item.language}</p>
-                  <span class="dot"/>
-                  </div>
-                <div><p>updated {item.updated_at} hours ago</p></div>
-              </div>
-            </div>
-          </div>
+            <Repo item={item} key={key}/>
         ))}
       </div>
     </div>

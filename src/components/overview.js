@@ -1,4 +1,4 @@
-import '../sass/overview.scss';
+import 'src/sass/overview.scss';
 import {useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -12,6 +12,7 @@ export default function Overview() {
       console.log(res.data)
     })
   }, [])
+
   return (
     <div>
       <div className="overview-titles">

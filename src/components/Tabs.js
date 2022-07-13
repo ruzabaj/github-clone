@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Routes  from "../routes";
+import Routes  from "src/routes";
 
 // css-styles,css
 const tabs = () => {

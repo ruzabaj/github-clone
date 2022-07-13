@@ -1,4 +1,4 @@
-import "../sass/footer.scss";
+import "src/sass/footer.scss";
 export default function footer() {
   return (
 <div>
