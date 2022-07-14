@@ -1,6 +1,6 @@
 import axios from "axios";
 export const baseUrl = process.env.GITHUB_BASE_URL;
-const token ='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';
+export const token =process.env.TOKEN;
 
 
 export const userDetail =async id=>{
@@ -23,12 +23,10 @@ export const projectDetail =async id=>{
 
 export const updateDetail =async id =>{
     axios.patch(`https://api.github.com/user/ruzabaj`,
-    //  {data},
       {
         headers: {
             'content-type': 'application/json',
-            // "Authorization" : `Bearer ${token}`,
-            "Authorization" : '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',
+            "Authorization" : `Bearer ${token}`,
         },
     })
     .then(res => {
@@ -38,7 +36,11 @@ export const updateDetail =async id =>{
           console.log(error)
     });   
 }
-
-// const token = JSON.parse(sessionStorage.getItem('data'));
-// const token = user.data.id; /*take only token and save in token variable*/
+const getRepo = async ()=>{
+const response = await axios.get('https://api.github.com/users/ruzabaj/repos');
+return response;
+}
+export const profileServices = {
+    getRepo,
+}
 

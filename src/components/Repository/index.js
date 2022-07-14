@@ -1,33 +1,62 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
-import "src/sass/repo.scss";
-import Select from "./Select";
+import { useState, useEffect, useRef } from "react";
+import Select from 'src/components/Select';
 import Sort from "./Sort";
-import Type from "./Type";
 import Repo from "./Repo";
+import {profileServices} from 'src/services';
+import "src/sass/repo.scss";
+import {typeList } from 'src/libs/constants';
 
 export default function Repository() {
   const [repo, setUserRepo] = useState([]);
-  const [search, setSearch] = useState("");
-  const [selectedLanguage, setSelectedLanguage] = useState("");
-  const [selectedSort, setSelectedSort] = useState("");
-  const [selectedType, setSelectedType] = useState("");
-  const [status, setStatus] = useState("");
+  const [filter, setFilter] = useState({
+    keyword:'',
+    language: '',
+    type:'',
+    sort:''
+  })
+  const [colorLanguage, setColorLanguage] = useState("");
   const [filteredRepo, setFilteredRepo] = useState([]);
 
-  // for get api 
-  const getData = async () => {
-    const { data } = await axios.get(
-      `https://api.github.com/users/ruzabaj/repos`
-    );
-    setUserRepo(data);
-    console.log("data", data)
-  };
+  const [search, setSearch] = useState('')
+
+  const reference = useRef();
+    console.log({filteredRepo})
 
   useEffect(() => {
+    const getData = async () => {
+      const { data } = await profileServices.getRepo();
+      setUserRepo(data);
+      setFilteredRepo(data);
+    };
     getData();
   }, []);
+
+
+  useEffect(() => {
+    let newRepo = repo.filter((rep) => rep.language === filter.language);
+     newRepo = newRepo.filter((value) => {
+      console.log(value,"value")
+      if (value == null) {
+        return value;
+      } else if (value.name.toLowerCase().includes(value.toLowerCase())) {
+        return value;
+      }
+    });
+    setFilteredRepo(newRepo);
+  }, [filter]);
   
+  //for type
+  // useEffect(() => {
+  //   const newRepo = repo.filter((rep) => selectedType === false);
+  //   setFilteredRepo(newRepo);
+  // }, [selectedType]);
+  
+  // for input search
+  const inputFilter = (event) => {
+    setFilter({...filter, keyword:event.target.value});
+  };
+
   // for language search
   const getLanguage = [
     ...new Set(
@@ -36,54 +65,48 @@ export default function Repository() {
       })
     ),
   ];
-  useEffect(() => {
-    const newRepo = repo.filter((rep) => rep.language === selectedLanguage);
-    setFilteredRepo(newRepo);
-  }, [selectedLanguage]);
-  
-  // for input search
-  const inputFilter = (event) => {
-    setSearch(event.target.value);
-  };
-  useEffect(() => {
-    const newInput = repo.filter((value) => {
-      if (search == null) {
-        return value;
-      } else if (value.name.toLowerCase().includes(search.toLowerCase())) {
-        return value;
-      }
-    });
-    setFilteredRepo(newInput);
-  }, [search]);
 
-// sort the select
-  useEffect(() => {
-    const newSort = repo.sort((a, b) => {
-    if(selectedSort === 'Name'){
-      return a.name > b.name ? a.name : b.name;
-    }
-    else{
-      return a.id
-    }
-    });
-    console.log(selectedSort, "type-selected")
-    setFilteredRepo(newSort);
-  }, [selectedSort]);
+  // sort the select
+  // useEffect(() => {
+  //   const newSort = repo.sort((a, b) => {
+  //     if (selectedSort === "Name") {
+  //       return a.name > b.name ? a.name : b.name;
+  //     } else {
+  //       return a.id;
+  //     }
+  //   });
+  //   setFilteredRepo(newSort);
+  // }, [selectedSort]);
 
-  //type select
-useEffect(()=>{
-  const type = repo.filter((element)=>{
-    if(element.private === true){
-      setStatus("Private");
+  //show select status either private or public
+  // useEffect(() => {
+  //   const type = repo.filter((element) => {
+  //     if (element.private === true) {
+  //       setStatus("Private");
+  //     } else {
+  //       setStatus("Public");
+  //     }
+  //   });
+  // });
+
+  // useEffect(() => {
+  //   const colorName = repo.filter((element) => {
+  //     if (element.language === "Vue") {
+  //     } else {
+  //     }
+  //   });
+  // }, []);
+
+  const handleSearch = (e) =>{
+      setSearch(e.target.value);
+      const search = e.target.value;
+      const filter = repo.filter((repo)=>{
+        console.log({repo})
+        return repo.name.toLowerCase().includes(search.toLowerCase)
+      })
+      setFilteredRepo(filter)
     }
-    else{
-      setStatus("Public")
-    }
-    console.log(element.fork);
-    console.log(status);
-  })
-  console.log(selectedType, "type-selected")
-})
+    console.log({filteredRepo})
 
   return (
     <div className="container-md" id="repository">
@@ -91,22 +114,30 @@ useEffect(()=>{
         <input
           type="text"
           placeholder="Find a repository"
-          onChange={inputFilter}
+          onChange={handleSearch}
+          value={search}
         />
-        <Type setSelectedType={setSelectedType} />
+        <Select name='type' setFilter={setFilter} filter={filter} options={typeList}/>
         <Select
-          language={getLanguage}
-          setSelectedLanguage={setSelectedLanguage}
+          options={getLanguage}
+          filter={filter}
+          setFilter={setFilter}
+          name='language'
         />
-        <Sort setSelectedSort={setSelectedSort}/>
+        {/* <Sort setSelectedSort={setSelectedSort} /> */}
         <button type="submit" id="new-repository">
           New
         </button>
       </div>
-
       <div className="row">
-        {filteredRepo.map((item, key) => (
-          <Repo item={item} key={key} status={status} />
+        {filteredRepo.filter((item, key) => (
+          <Repo
+            item={item}
+            key={key}
+            // status={status}
+            repo={repo}
+            reference={reference}
+          />
         ))}
       </div>
     </div>
