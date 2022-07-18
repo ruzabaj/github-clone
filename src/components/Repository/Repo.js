@@ -13,7 +13,7 @@ const Repo = ({ item, key, status, repo }) => {
       <div id="respository-heading">
         <div id="repository-project">
           <a href="project-name">{item.name}</a>
-          {/* <span> {status}</span> */}
+          <span> {status}</span>
         </div>
         <div className="star">
           <select>

@@ -4,29 +4,25 @@ import Select from 'src/components/Select';
 import Sort from "./Sort";
 import Repo from "./Repo";
 import {profileServices} from 'src/services';
-import "src/sass/repo.scss";
 import {typeList } from 'src/libs/constants';
+import "src/sass/repo.scss";
+import { type } from "@testing-library/user-event/dist/type";
 
 export default function Repository() {
-  const [repo, setUserRepo] = useState([]);
+  const [repo, setRepo] = useState([]);
   const [filter, setFilter] = useState({
     keyword:'',
     language: '',
     type:'',
     sort:''
   })
-  const [colorLanguage, setColorLanguage] = useState("");
   const [filteredRepo, setFilteredRepo] = useState([]);
-
-  const [search, setSearch] = useState('')
-
-  const reference = useRef();
-    console.log({filteredRepo})
+  const [status, setStatus]= useState("");
 
   useEffect(() => {
     const getData = async () => {
       const { data } = await profileServices.getRepo();
-      setUserRepo(data);
+      setRepo(data);
       setFilteredRepo(data);
     };
     getData();
@@ -35,22 +31,9 @@ export default function Repository() {
 
   useEffect(() => {
     let newRepo = repo.filter((rep) => rep.language === filter.language);
-     newRepo = newRepo.filter((value) => {
-      console.log(value,"value")
-      if (value == null) {
-        return value;
-      } else if (value.name.toLowerCase().includes(value.toLowerCase())) {
-        return value;
-      }
-    });
+    newRepo = newRepo.filter((repo) => repo.name.toLowerCase().includes(filter.keyword.toLowerCase()));
     setFilteredRepo(newRepo);
-  }, [filter]);
-  
-  //for type
-  // useEffect(() => {
-  //   const newRepo = repo.filter((rep) => selectedType === false);
-  //   setFilteredRepo(newRepo);
-  // }, [selectedType]);
+  }, [repo, filter]);
   
   // for input search
   const inputFilter = (event) => {
@@ -65,6 +48,17 @@ export default function Repository() {
       })
     ),
   ];
+  
+  //show select status either private or public
+  useEffect(() => {
+    const type = repo.filter((element) => {
+      if (element.private === true) {
+        setStatus("Private");
+      } else {
+        setStatus("Public");
+      }
+    });
+  },[type]);
 
   // sort the select
   // useEffect(() => {
@@ -78,35 +72,11 @@ export default function Repository() {
   //   setFilteredRepo(newSort);
   // }, [selectedSort]);
 
-  //show select status either private or public
-  // useEffect(() => {
-  //   const type = repo.filter((element) => {
-  //     if (element.private === true) {
-  //       setStatus("Private");
-  //     } else {
-  //       setStatus("Public");
-  //     }
-  //   });
-  // });
-
-  // useEffect(() => {
-  //   const colorName = repo.filter((element) => {
-  //     if (element.language === "Vue") {
-  //     } else {
-  //     }
-  //   });
-  // }, []);
 
   const handleSearch = (e) =>{
-      setSearch(e.target.value);
       const search = e.target.value;
-      const filter = repo.filter((repo)=>{
-        console.log({repo})
-        return repo.name.toLowerCase().includes(search.toLowerCase)
-      })
-      setFilteredRepo(filter)
-    }
-    console.log({filteredRepo})
+      setFilter({...filter, keyword: search});
+  }
 
   return (
     <div className="container-md" id="repository">
@@ -115,7 +85,7 @@ export default function Repository() {
           type="text"
           placeholder="Find a repository"
           onChange={handleSearch}
-          value={search}
+          value={filter.keyword}
         />
         <Select name='type' setFilter={setFilter} filter={filter} options={typeList}/>
         <Select
@@ -124,19 +94,17 @@ export default function Repository() {
           setFilter={setFilter}
           name='language'
         />
-        {/* <Sort setSelectedSort={setSelectedSort} /> */}
         <button type="submit" id="new-repository">
           New
         </button>
       </div>
       <div className="row">
-        {filteredRepo.filter((item, key) => (
+        {filteredRepo.map((item, key) => (
           <Repo
             item={item}
             key={key}
-            // status={status}
+            status={status}
             repo={repo}
-            reference={reference}
           />
         ))}
       </div>
